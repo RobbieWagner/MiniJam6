@@ -19,7 +19,7 @@ public class Hazard : MonoBehaviour
     private IEnumerator EnableTriggerCo()
     {
         hazardDisplay.color = Color.clear;
-        yield return hazardDisplay.DOColor(new Color(1, .25f, .25f, .4f), triggerWait).SetEase(Ease.InSine).WaitForCompletion();
+        yield return hazardDisplay.DOColor(new Color(1, .25f, .25f, .3f), triggerWait).SetEase(Ease.InSine).WaitForCompletion();
         coll.enabled = true;
     }
 }

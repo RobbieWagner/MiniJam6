@@ -28,6 +28,8 @@ public class GameEventManager : MonoBehaviour
     public Popup popupPrefab;
     private Popup popupInstance;
 
+    [SerializeField] private Canvas worldSpaceUI;
+
     private int currentPage;
 
     public static GameEventManager Instance {get; private set;}
@@ -160,7 +162,11 @@ public class GameEventManager : MonoBehaviour
 
     public void PlaceEventSpawns()
     {
-
+        foreach(EventSpawn spawn in currentGameEvent.eventSpawns)
+        {
+            GameObject newObj = Instantiate(spawn.spawn, worldSpaceUI.transform);
+            newObj.transform.position = spawn.spawnLocation;
+        }
     }
 
 }

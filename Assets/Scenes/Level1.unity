@@ -3849,6 +3849,10 @@ PrefabInstance:
       propertyPath: popupCanvas
       value: 
       objectReference: {fileID: 2018043592}
+    - target: {fileID: 5461786896532744270, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
+      propertyPath: worldSpaceUI
+      value: 
+      objectReference: {fileID: 1730493943}
     - target: {fileID: 6904838585467062660, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: colors.Array.data[0].b
       value: 0

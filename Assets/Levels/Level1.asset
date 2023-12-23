@@ -21,7 +21,7 @@ MonoBehaviour:
   events:
   - timeOfEvent: 0
     gameEvent: {fileID: 11400000, guid: 9448d5f3c92f47147886148903661ca5, type: 2}
-    triggered: 0
+    triggered: 1
   - timeOfEvent: 140
     gameEvent: {fileID: 11400000, guid: 9852e4b92d9b23144b0499b97b329026, type: 2}
-    triggered: 0
+    triggered: 1
