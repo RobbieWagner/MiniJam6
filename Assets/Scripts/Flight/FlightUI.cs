@@ -44,6 +44,8 @@ public class FlightUI : MonoBehaviour
         }
     }
 
+    [SerializeField] private FlightUIPlaceholder placeholder;
+
     private void Awake()
     {
         stallFlightButton.enabled = false;
@@ -80,6 +82,6 @@ public class FlightUI : MonoBehaviour
         stallFlightButton.enabled = true;
         StopCoroutine(CooldownButtonCo(button));
     }
-
+    
     //20w 13h
 }

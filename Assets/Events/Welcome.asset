@@ -30,14 +30,13 @@ MonoBehaviour:
     patented <b>REMOTE OPERATED PLANES</b> to do just that.
   - <color=#7072ffff>The <b>STALL FLIGHT</b> button on the left of each aircrafts
     control card will temporarily force the plane to circle its current location.
-    This has little impact on customer satisfaction, so it will be an easy way to
-    prevent two planes from getting too close.</color>
-  - 
+    During this time, the plane will not collide with anything.
+  - <color=#7072ffff>This has little impact on customer satisfaction, so it will
+    be an easy way to prevent two planes from getting too close.</color>
   - <color=#7072ffff>In some situations, however, this is not enough. This is where
-    the <b>REROUTE BUTTON</b> comes in.</color>
-  - <color=#7072ffff>Located on the of the control card, this button will allow you
-    to select a new destination for the plane to travel before continuing towards
-    its destination.</color>
+    the <b>REROUTE BUTTON</b> comes in. Located on the of the control card, this
+    button will allow you to select a new destination for the plane to travel before
+    continuing towards its destination.</color>
   - <color=#7072ffff>Simply push the <b>REROUTE BUTTON</b>, then select any point
     on the map, and the plane will travel there.</color>
   - <color=#7072ffff>The customer does not like this as much, so satisfaction will
@@ -47,10 +46,14 @@ MonoBehaviour:
     aboard. <b>NORTH EAST BETA AIRLINES</b> is glad to have you!</color>
   visualAids:
   - visual: {fileID: 21300000, guid: 6634e038dc7815a4cb6ca776b465eb0d, type: 3}
-    messageElement: 0
+    messageElement: 5
+  - visual: {fileID: 21300000, guid: 6634e038dc7815a4cb6ca776b465eb0d, type: 3}
+    messageElement: 6
   - visual: {fileID: 21300000, guid: b4f251b9431d34c45a21c496a6c59fcd, type: 3}
-    messageElement: 0
+    messageElement: 7
   - visual: {fileID: 21300000, guid: b4f251b9431d34c45a21c496a6c59fcd, type: 3}
-    messageElement: 0
+    messageElement: 8
+  - visual: {fileID: 21300000, guid: b4f251b9431d34c45a21c496a6c59fcd, type: 3}
+    messageElement: 9
   windowSize: {x: 500, y: 300}
   eventSpawns: []

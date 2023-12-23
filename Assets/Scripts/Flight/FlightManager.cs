@@ -46,7 +46,16 @@ public class FlightManager : MonoBehaviour
             flight.departureIndicatorInstance = Instantiate(GameManager.Instance.flightLegIndicatorPrefab, worldSpaceCanvas.transform);
             flight.destinationIndicatorInstance = Instantiate(GameManager.Instance.flightLegIndicatorPrefab, worldSpaceCanvas.transform);
             flight.planeInstance = Instantiate(GameManager.Instance.planePrefab, planeCanvas.transform);
-            flight.flightCardUIInstance = Instantiate(GameManager.Instance.flightUIPrefab, flightDirectory.transform);
+            foreach(FlightUI controlCard in GameManager.Instance.controlCards)
+            {
+                if(!controlCard.gameObject.activeSelf)
+                {
+                    controlCard.gameObject.SetActive(true);
+                    controlCard.flight = flight;
+                    flight.flightCardUIInstance = controlCard;
+                    break;
+                }
+            }
             flight.flightCardUIInstance.plane = flight.planeInstance;
             flight.flightCardUIInstance.flight = flight;
             flight.planeInstance.transform.position = flight.departureLocation.coordinates;
@@ -91,7 +100,8 @@ public class FlightManager : MonoBehaviour
             Destroy(flight.departureIndicatorInstance.gameObject);
             Destroy(flight.destinationIndicatorInstance.gameObject);
             Destroy(flight.planeInstance.gameObject);
-            Destroy(flight.flightCardUIInstance.gameObject);
+            flight.flightCardUIInstance.flight = null;
+            flight.flightCardUIInstance.gameObject.SetActive(false);
         }
     }
 
@@ -125,7 +135,8 @@ public class FlightManager : MonoBehaviour
         Destroy(flight.destinationIndicatorInstance.gameObject);
         Destroy(flight.departureIndicatorInstance.gameObject);
         Destroy(flight.planeInstance.gameObject);
-        Destroy(flight.flightCardUIInstance.gameObject);
+        flight.flightCardUIInstance.flight = null;
+        flight.flightCardUIInstance.gameObject.SetActive(false);
      
         yield return null;
 

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public FlightLegIndicator flightLegIndicatorPrefab;
     public Airplane planePrefab;
     public FlightUI flightUIPrefab;
+    public List<FlightUI> controlCards;
     public Level currentLevel;
 
     public Canvas gameOverCanvas;
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
             yield return null;
             timeInLevel += Time.deltaTime;
             UpdateTimerText();
+            CheckForTimeTriggeredEvents();
         }
     }
 

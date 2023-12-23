@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class FlightLegIndicator : MonoBehaviour
 {
-
     [HideInInspector] public int flightID;
     [HideInInspector] public bool isDestination = false;
     public Image blinkingLight;

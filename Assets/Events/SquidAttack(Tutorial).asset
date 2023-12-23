@@ -19,7 +19,8 @@ MonoBehaviour:
     in this area will be destroyed!
   - '<color=green>Tutorial: Hazards may be found during the day that need to be avoided.'
   - <color=green> Reroute flights midair and avoid the red circle or they will crash!
-  windowSize: {x: 400, y: 400}
+  visualAids: []
+  windowSize: {x: 400, y: 300}
   eventSpawns:
   - spawn: {fileID: 8032899269732095747, guid: d5175f66c9d0f0d45aa931b63c0004ae, type: 3}
     spawnLocation: {x: -4, y: 1}
