@@ -22,12 +22,18 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySoundByName(string soundName)
     {
+        bool soundPlayed = false;
+
         foreach(Sound sound in sounds)
         {
             if(sound.soundName.ToLower().Equals(soundName.ToLower()))
             {
                 sound.audioSource.Play();
+                soundPlayed = true;
+                break;
             }
         }
+
+        if(!soundPlayed) Debug.Log("Sound not found: " + soundName);
     }  
 }

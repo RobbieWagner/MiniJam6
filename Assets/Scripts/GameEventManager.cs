@@ -48,6 +48,7 @@ public class GameEventManager : MonoBehaviour
 
     public void DisplayGameEvent(GameEvent gameEvent)
     {
+        SoundManager.Instance.PlaySoundByName("Popup");
         Time.timeScale = 0;
         currentGameEvent = gameEvent;
         popupCanvas.enabled = true;

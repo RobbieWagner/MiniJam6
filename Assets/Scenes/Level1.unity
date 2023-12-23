@@ -1999,6 +1999,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23215e36ba3b9643a33727d7d3f1829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1331604525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8717003838811139772, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
+  m_PrefabInstance: {fileID: 2524873905194893737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1332c6961896ba24d98572b57b05d2db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1412378385
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,6 +3792,14 @@ PrefabInstance:
       propertyPath: controlCards.Array.data[11]
       value: 
       objectReference: {fileID: 1810037979}
+    - target: {fileID: 1655593094778533027, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
+      propertyPath: m_Pitch
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655593094778533027, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3189710213391526498, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3821,6 +3840,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3673529033015717069, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
+      propertyPath: m_Name
+      value: ControlCardButton
+      objectReference: {fileID: 0}
     - target: {fileID: 4178516047550721421, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: m_Name
       value: MANAGERS
@@ -3845,6 +3868,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5306822735909323606, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
+      propertyPath: sounds.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306822735909323606, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
+      propertyPath: sounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 1331604525}
     - target: {fileID: 5461786896532744270, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: popupCanvas
       value: 
@@ -3889,8 +3920,13 @@ PrefabInstance:
       propertyPath: colors.Array.data[2].r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8017310510289888367, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
+      propertyPath: soundName
+      value: Popup
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 243315392474484986, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}

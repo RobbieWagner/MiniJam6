@@ -45,7 +45,7 @@ public class FlightManager : MonoBehaviour
         {
             flight.departureIndicatorInstance = Instantiate(GameManager.Instance.flightLegIndicatorPrefab, worldSpaceCanvas.transform);
             flight.destinationIndicatorInstance = Instantiate(GameManager.Instance.flightLegIndicatorPrefab, worldSpaceCanvas.transform);
-            flight.planeInstance = Instantiate(GameManager.Instance.planePrefab, planeCanvas.transform);
+            flight.planeInstance = Instantiate(GameManager.Instance.planePrefab, planeCanvas.transform).GetComponentInChildren<Airplane>();
             foreach(FlightUI controlCard in GameManager.Instance.controlCards)
             {
                 if(!controlCard.gameObject.activeSelf)
@@ -58,11 +58,11 @@ public class FlightManager : MonoBehaviour
             }
             flight.flightCardUIInstance.plane = flight.planeInstance;
             flight.flightCardUIInstance.flight = flight;
-            flight.planeInstance.transform.position = flight.departureLocation.coordinates;
+            flight.planeInstance.transform.parent.position = flight.departureLocation.coordinates;
             flight.departureIndicatorInstance.transform.position = flight.departureLocation.coordinates;
             flight.destinationIndicatorInstance.transform.position = flight.destinationLocation.coordinates;
             
-            flight.planeInstance.GetComponent<Image>().color = flightColor;
+            flight.planeInstance.transform.parent.GetComponent<Image>().color = flightColor;
             flight.flightCardUIInstance.UIColor = flightColor;
             flight.departureIndicatorInstance.blinkingLight.color = flightColor;
             flight.destinationIndicatorInstance.blinkingLight.color = flightColor;
@@ -91,7 +91,7 @@ public class FlightManager : MonoBehaviour
     {
         if(flight != null)
         {
-            Color color = flight.planeInstance.GetComponent<Image>().color;
+            Color color = flight.planeInstance.transform.parent.GetComponent<Image>().color;
             currentUsedColors.Remove(color);
             flightsInAir.Remove(color);
 
@@ -99,7 +99,7 @@ public class FlightManager : MonoBehaviour
 
             Destroy(flight.departureIndicatorInstance.gameObject);
             Destroy(flight.destinationIndicatorInstance.gameObject);
-            Destroy(flight.planeInstance.gameObject);
+            Destroy(flight.planeInstance.transform.parent.gameObject);
             flight.flightCardUIInstance.flight = null;
             flight.flightCardUIInstance.gameObject.SetActive(false);
         }
@@ -117,12 +117,14 @@ public class FlightManager : MonoBehaviour
             {
                 foreach(Color flight in flightsInAir.Keys)
                 {
-                    if(plane.GetComponent<Image>().color == flight)
+                    if(plane.transform.parent.GetComponent<Image>().color == flight)
                     {
                         StartCoroutine(StopFlightCo(flight, flightsInAir[flight]));
                     }
                 }
             }
+
+            SoundManager.Instance.PlaySoundByName("Crash");
             OnPlaneCrash?.Invoke();
         }
     }
@@ -134,7 +136,7 @@ public class FlightManager : MonoBehaviour
     {
         Destroy(flight.destinationIndicatorInstance.gameObject);
         Destroy(flight.departureIndicatorInstance.gameObject);
-        Destroy(flight.planeInstance.gameObject);
+        Destroy(flight.planeInstance.transform.parent.gameObject);
         flight.flightCardUIInstance.flight = null;
         flight.flightCardUIInstance.gameObject.SetActive(false);
      

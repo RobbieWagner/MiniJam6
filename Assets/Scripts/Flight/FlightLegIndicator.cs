@@ -12,7 +12,7 @@ public class FlightLegIndicator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.TryGetComponent<Airplane>(out Airplane airplane) && airplane != null && airplane.GetComponent<Image>().color.Equals(blinkingLight.color))
+        if(other.gameObject.TryGetComponent<Airplane>(out Airplane airplane) && airplane != null && airplane.transform.parent.GetComponent<Image>().color.Equals(blinkingLight.color))
         {
             if(isDestination) 
             {

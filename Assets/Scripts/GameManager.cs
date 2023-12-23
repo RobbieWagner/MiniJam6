@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private float GracePeriod = 2f;
 
     public FlightLegIndicator flightLegIndicatorPrefab;
-    public Airplane planePrefab;
+    public GameObject planePrefab;
     public FlightUI flightUIPrefab;
     public List<FlightUI> controlCards;
     public Level currentLevel;
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
                 else if(currentLevel.levelDifficulty <= 12) newPlanes = Random.Range(2,4);
                 else newPlanes = Random.Range(3,5);
 
-                for(int i = 0; i < newPlanes; i++)
+                for(int i = 0; i < newPlanes && FlightManager.Instance.flightsInAir.Count < currentLevel.maxFlightsAtOneTime; i++)
                 {
                     Flight newFlight = new Flight(GetRandomLocation(), GetRandomLocation());
                     int locationCheckLimit = 100;

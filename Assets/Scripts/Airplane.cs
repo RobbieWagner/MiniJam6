@@ -30,10 +30,13 @@ public class Airplane : MonoBehaviour
 
     private void Update()
     {
-        if(rb2d.velocity.magnitude > 0 && Vector2.Distance(transform.position, destinations[0]) < .01f)
+        if(destinations?.Count > 0)
         {
-            destinations.RemoveAt(0);
-            FlyToDestination();
+            if(rb2d.velocity.magnitude > 0 && Vector2.Distance(transform.position, destinations[0]) < .01f)
+                {
+                    destinations.RemoveAt(0);
+                    FlyToDestination();
+                }
         }
     }
 
@@ -61,6 +64,7 @@ public class Airplane : MonoBehaviour
         planeCollider.enabled = true;
         //this.destination = destinations[0];
         rb2d.velocity = Vector2.ClampMagnitude(destinations[0] - (Vector2) transform.position, 1) * flightSpeed;
+        SoundManager.Instance.PlaySoundByName("FlyToDestination");
         
         if(Math.Abs(rb2d.velocity.x) > Math.Abs(rb2d.velocity.y))
         {
@@ -84,6 +88,7 @@ public class Airplane : MonoBehaviour
 
         planeCollider.enabled = true;
         rb2d.velocity = Vector2.ClampMagnitude(destinations[0] - (Vector2) transform.position, 1) * flightSpeed;
+        SoundManager.Instance.PlaySoundByName("FlyToDestination");
         
         if(Math.Abs(rb2d.velocity.x) > Math.Abs(rb2d.velocity.y))
         {
