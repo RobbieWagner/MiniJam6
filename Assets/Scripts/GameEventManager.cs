@@ -13,17 +13,11 @@ public class EventSpawn
     public Vector2 spawnLocation;
 }
 
-[CreateAssetMenu(menuName = "Flights/GameEvent")]
-public class GameEvent : ScriptableObject
+[System.Serializable]
+public class VisualAid
 {
-    [Header("Alert")]
-    public Sprite alertIcon;
-    public string alertTitle;
-    [TextArea(5,20)] public string[] alertBody;
-    public Vector2 windowSize;
-
-    [Header("Event Effects")]
-    public EventSpawn[] eventSpawns;
+    public Sprite visual;
+    public int messageElement;
 }
 
 public class GameEventManager : MonoBehaviour
@@ -85,6 +79,21 @@ public class GameEventManager : MonoBehaviour
             {
                 ToggleXOut(false);
                 ToggleArrows(true, true);
+            }
+
+            if(currentGameEvent.visualAids != null)
+            {
+                popupInstance.visualAid.enabled = false;
+                foreach(VisualAid visualAid in currentGameEvent.visualAids)
+                {
+                    if(visualAid.messageElement == window)
+                    {
+                        popupInstance.visualAid.enabled = true;
+                        popupInstance.visualAid.sprite = visualAid.visual;
+                        //popupInstance.visualAid.SetNativeSize();
+                        break;
+                    }
+                }
             }
         }
     }

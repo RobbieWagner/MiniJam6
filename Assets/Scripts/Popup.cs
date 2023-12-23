@@ -10,6 +10,7 @@ public class Popup : MonoBehaviour
     public Image icon;
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI bodyText;
+    public Image visualAid;
     public CustomUIElement xOut;
     public CustomUIElement leftArrow;
     public CustomUIElement rightArrow;

@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public Canvas pauseCanvas;
     public Canvas winCanvas;
 
+    public GameSlider satisfactionSlider;
+    public GameSlider conspiracySlider;
+
     public TextMeshProUGUI timerText;
     public float timeInLevel {get; private set;}
 
@@ -42,6 +45,16 @@ public class GameManager : MonoBehaviour
         StartLevel();
 
         timerText.text = "09:00";
+
+        satisfactionSlider.OnSliderValueChanged += CheckForGameOver;
+    }
+
+    private void CheckForGameOver(float value)
+    {
+        if (value <= 0) 
+        {
+            DisplayGameOver();
+        }
     }
 
     public void StartLevel()
@@ -92,19 +105,20 @@ public class GameManager : MonoBehaviour
 
         timeInLevel = 0;
         CheckForTimeTriggeredEvents();
+        satisfactionSlider.SliderValue = 100;
         yield return new WaitForSeconds(GracePeriod);
         timeInLevel = GracePeriod;
-        FlightManager.Instance.OnPlaneCrash += DisplayGameOver;
+        FlightManager.Instance.OnPlaneCrash += OnPlaneCrash;
         while(timeInLevel < currentLevel.levelTime)
         {
-            int newPlanes;
+            int newPlanes = 0;
 
             if(FlightManager.Instance.flightsInAir.Count < currentLevel.maxFlightsAtOneTime)
             {
+                if(currentLevel.levelDifficulty <= 1) newPlanes = 1;
                 if(currentLevel.levelDifficulty <= 4) newPlanes = Random.Range(1,3);
-                else if(currentLevel.levelDifficulty <= 8) newPlanes = Random.Range(2,4);
-                else if(currentLevel.levelDifficulty <= 12) newPlanes = Random.Range(3,5);
-                else newPlanes = Random.Range(4,6);
+                else if(currentLevel.levelDifficulty <= 12) newPlanes = Random.Range(2,4);
+                else newPlanes = Random.Range(3,5);
 
                 for(int i = 0; i < newPlanes; i++)
                 {
@@ -122,12 +136,19 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            float timeBeforeNextFlight = Random.Range(currentLevel.minTimeBetweenFlights, currentLevel.maxTimeBetweenFlights);
+            float minTimeBeforeNextFlight = (currentLevel.minTimeBetweenFlights + ((float)newPlanes / 2f)) * Mathf.Abs(Mathf.Cos(timeInLevel * (Mathf.PI/(currentLevel.levelTime/3))));
+            float maxTimeBeforeNextFlight = (currentLevel.maxTimeBetweenFlights + ((float)newPlanes / 2f)) * Mathf.Abs(Mathf.Cos(timeInLevel * (Mathf.PI/(currentLevel.levelTime/3))));
+            float timeBeforeNextFlight = Random.Range(minTimeBeforeNextFlight, maxTimeBeforeNextFlight);
             yield return new WaitForSeconds(timeBeforeNextFlight);
         }
 
         EndLevel();
         StopCoroutine(PlayLevelCo());
+    }
+
+    private void OnPlaneCrash()
+    {
+        satisfactionSlider.SliderValue -= 25;
     }
 
     private void CheckForTimeTriggeredEvents()
@@ -139,6 +160,7 @@ public class GameManager : MonoBehaviour
                 if(!levelEvent.triggered && levelEvent.timeOfEvent >= 0 && levelEvent.timeOfEvent <= timeInLevel)
                 {
                     GameEventManager.Instance.DisplayGameEvent(levelEvent.gameEvent);
+                    levelEvent.triggered = true;
                     break;
                 }
             }

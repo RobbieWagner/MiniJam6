@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelDifficulty: 3
   flightCount: 25
-  levelTime: 300
+  levelTime: 180
   maxFlightsAtOneTime: 4
-  minTimeBetweenFlights: 3.5
-  maxTimeBetweenFlights: 5
+  minTimeBetweenFlights: 0.5
+  maxTimeBetweenFlights: 2
   events:
   - timeOfEvent: 0
     gameEvent: {fileID: 11400000, guid: 9448d5f3c92f47147886148903661ca5, type: 2}
     triggered: 0
-  - timeOfEvent: 240
+  - timeOfEvent: 140
     gameEvent: {fileID: 11400000, guid: 9852e4b92d9b23144b0499b97b329026, type: 2}
     triggered: 0

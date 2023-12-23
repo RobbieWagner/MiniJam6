@@ -16,6 +16,8 @@ public class FlightManager : MonoBehaviour
 
     [SerializeField] private List<Color> planeColorOptions;
 
+    private bool canCrashPlanes = true;
+
     HashSet<Color> currentUsedColors;
 
     public static FlightManager Instance {get; private set;}
@@ -98,12 +100,38 @@ public class FlightManager : MonoBehaviour
 
     public void CrashPlanes(List<Airplane> planes)
     {
-        Debug.Log("hello");
-        OnPlaneCrash?.Invoke();
+        if(canCrashPlanes)
+        {
+            canCrashPlanes = false;
+            foreach(Airplane plane in planes)
+            {
+                foreach(Color flight in flightsInAir.Keys)
+                {
+                    if(plane.GetComponent<Image>().color == flight)
+                    {
+                        StartCoroutine(StopFlightCo(flight, flightsInAir[flight]));
+                    }
+                }
+            }
+            OnPlaneCrash?.Invoke();
+        }
     }
 
     public delegate void OnPlaneCrashDelegate();
     public event OnPlaneCrashDelegate OnPlaneCrash;
+
+    public IEnumerator StopFlightCo(Color color, Flight flight)
+    {
+        Destroy(flight.destinationIndicatorInstance.gameObject);
+        Destroy(flight.departureIndicatorInstance.gameObject);
+        Destroy(flight.planeInstance.gameObject);
+        Destroy(flight.flightCardUIInstance.gameObject);
+     
+        yield return null;
+
+        flightsInAir.Remove(color);
+        canCrashPlanes = true;
+    }
 
     private IEnumerator StartFlightCo(Flight flight)
     {
@@ -124,8 +152,14 @@ public class FlightManager : MonoBehaviour
 
         foreach(Flight flight in flightsInAir.Values)
         {
-            if(flight.departureLocation.coordinates == newFlight.departureLocation.coordinates) return false;
-            if(Vector2.Distance(flight.planeInstance.transform.position, flight.departureLocation.coordinates) < 3.5f) return false;
+            if(flight.departureLocation.coordinates == newFlight.departureLocation.coordinates) 
+            {
+                return false;
+            }
+            if(Vector2.Distance(flight.planeInstance.transform.position, newFlight.departureLocation.coordinates) < 3.5f)
+             {
+                return false;
+            }
         }
 
         return true;

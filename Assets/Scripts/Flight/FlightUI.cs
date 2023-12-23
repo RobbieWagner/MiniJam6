@@ -46,7 +46,6 @@ public class FlightUI : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("new flight");
         stallFlightButton.enabled = false;
         stallFlightButton.GetComponent<Image>().sprite = blankButtonSprite;
         rerouteButton.enabled = false;
@@ -55,7 +54,6 @@ public class FlightUI : MonoBehaviour
 
     public void StallFlightButton()
     {
-        Debug.Log("hi");
         StartCoroutine(flight?.StallFlight());
         flight.OnFlightResumed += CooldownStall;
         stallFlightButton.enabled = false;

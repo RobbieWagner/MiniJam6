@@ -18,7 +18,6 @@ public class FlightLegIndicator : MonoBehaviour
             if(isDestination) 
             {
                 FlightManager.Instance.LandPlane(flight);
-                Debug.Log("land");
             }
         }
     }
