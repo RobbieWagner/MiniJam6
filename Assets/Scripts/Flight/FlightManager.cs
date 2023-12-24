@@ -110,6 +110,7 @@ public class FlightManager : MonoBehaviour
 
     public void CrashPlanes(List<Airplane> planes)
     {
+        Debug.Log(planes.Count);
         if(canCrashPlanes)
         {
             canCrashPlanes = false;

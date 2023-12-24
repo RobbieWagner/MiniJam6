@@ -10,7 +10,7 @@ public class Airplane : MonoBehaviour
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private Collider2D planeCollider;
     //[HideInInspector] public Vector2 destination;
-    private List<Vector2> destinations;
+    protected List<Vector2> destinations;
     public float flightSpeed = 1f;
 
     [SerializeField] private Image planeSprite;
@@ -22,7 +22,7 @@ public class Airplane : MonoBehaviour
 
     private Coroutine spinCoroutine;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         planeSprites = new List<Sprite>(){planeUp, planeRight, planeDown, planeLeft};
         spinCoroutine = null;
@@ -33,19 +33,32 @@ public class Airplane : MonoBehaviour
         if(destinations?.Count > 0)
         {
             if(rb2d.velocity.magnitude > 0 && Vector2.Distance(transform.position, destinations[0]) < .01f)
-                {
-                    destinations.RemoveAt(0);
-                    FlyToDestination();
-                }
+            {
+                destinations.RemoveAt(0);
+                if(destinations.Count > 0) FlyToDestination();
+                else StopFlying(false, false);
+                OnReachDestination();
+            }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public delegate void OnReachDestinationDelegate();
+    public event OnReachDestinationDelegate OnReachDestination;
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Hazard"))
             FlightManager.Instance.CrashPlanes(new List<Airplane>() {this});
         if(other.gameObject.TryGetComponent<Airplane>(out Airplane airplane) && airplane != null)
             FlightManager.Instance.CrashPlanes(new List<Airplane>() {this, airplane});
+        if(other.gameObject.TryGetComponent<ChemtrailPlane>(out ChemtrailPlane conspiracyPlane) && conspiracyPlane != null)
+        {
+            Destroy(conspiracyPlane.transform.parent.gameObject);
+            FlightManager.Instance.CrashPlanes(new List<Airplane>() {this});
+        }
+
+        if(other.gameObject.CompareTag("Conspiracy"))
+            GameManager.Instance.IncreaseCustomerSuspicion(10);
     }
 
     public void FlyToDestination(Vector2 destination, bool hasPriority = true, bool stopSpin = true)
@@ -102,13 +115,13 @@ public class Airplane : MonoBehaviour
         }
     }
 
-    public void StopFlying(bool spin = true)
+    public void StopFlying(bool spin = true, bool disableCollider = true)
     {
         if(spin && spinCoroutine == null)
             spinCoroutine = StartCoroutine(Spin());
 
         //destination = Vector2.zero;
-        planeCollider.enabled = false;
+        if(disableCollider) planeCollider.enabled = false;
         rb2d.velocity = Vector2.zero;
     }
 
@@ -135,5 +148,6 @@ public class Airplane : MonoBehaviour
     {
         FlyToDestination(rerouteDestination);
         Worldmap.Instance.OnWorldMapClicked -= Reroute;
+        GameManager.Instance.IncreaseCustomerSatisfaction(-4);
     }
 }

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6366b66e40dfc15428fd570e9b964b64, type: 3}
+  m_Name: Day3
+  m_EditorClassIdentifier: 
+  alertIcon: {fileID: 21300000, guid: 72e9bf90cf91e6c48b31542db58f343d, type: 3}
+  alertTitle: Thank you
+  alertBody:
+  - <color=#7072ffff>Thank you, Employee 224937, for your hard work and dedication.
+    It is the people like you that help us keep the <s>idiots</s> people out there
+    safe and happy.
+  - <color=#7072ffff>To improve the quality of your performance and the satisfaction
+    of the customer, we are rolling out an exciting new program for all <b>Conspiracy
+    Control Associates</b> here at <b>NORTHEAST BETA AIRLINES</b>.
+  - <color=#7072ffff>As you may know, the government has been working on some new
+    technologies, and as their prime investors, we get to test out their protoypes.
+  - <color=#7072ffff>One of these technologies, the Customer Happy-gas Expulsion
+    Machine, will boost customer satisfaction, even under circumstances they find
+    less than ideal.
+  - <color=#7072ffff>During your shifts, simply move this <color=yellow>yellow C.H.E.M.
+    trailer aircraft</color> across the land, and you will see the customer satisfaction
+    improve immensly!
+  - <color=#7072ffff>Feel free to try it out during the day today! As long as it
+    doesn't crash into the other planes, this will boost our standings with the public,
+    and get more people buying plane tickets!
+  visualAids: []
+  windowSize: {x: 0, y: 0}
+  eventSpawns:
+  - spawn: {fileID: 3134160483076502259, guid: ba05d574ccf1a9a429d31ce8db2bc814, type: 3}
+    spawnLocation: {x: -4.25, y: 3.5}

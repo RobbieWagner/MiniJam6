@@ -1126,11 +1126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1438262846946236935, guid: d0d65649688827f4298f17884c69baa6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4.25
+      value: 3.75
       objectReference: {fileID: 0}
     - target: {fileID: 1438262846946236935, guid: d0d65649688827f4298f17884c69baa6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1438262846946236935, guid: d0d65649688827f4298f17884c69baa6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2752,6 +2752,7 @@ GameObject:
   - component: {fileID: 1730493942}
   - component: {fileID: 1730493941}
   - component: {fileID: 1730493945}
+  - component: {fileID: 1730493946}
   m_Layer: 5
   m_Name: WorldSpaceUI
   m_TagString: Untagged
@@ -2857,6 +2858,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minXY: {x: -8.75, y: -5}
   maxXY: {x: 3.75, y: 5}
+--- !u!114 &1730493946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730493940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: 0}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1810037977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3730,15 +3761,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 350670329028916964, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.325
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 350670329028916964, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 350670329028916964, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.325
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 784955096931315840, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: m_Name
@@ -3752,6 +3783,10 @@ PrefabInstance:
       propertyPath: pauseCanvas
       value: 
       objectReference: {fileID: 1984862255}
+    - target: {fileID: 981923678218085845, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
+      propertyPath: currentLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: f5b988fd732783243b80531661bc692f, type: 2}
     - target: {fileID: 981923678218085845, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: gameOverCanvas
       value: 
@@ -3880,6 +3915,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4861065748492981734, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
+      propertyPath: m_Name
+      value: Satisfaction
+      objectReference: {fileID: 0}
     - target: {fileID: 5306822735909323606, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: sounds.Array.size
       value: 6
@@ -3898,14 +3937,10 @@ PrefabInstance:
       objectReference: {fileID: 1730493943}
     - target: {fileID: 5933304075342097282, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.325
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5933304075342097282, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6079962127526532751, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6904838585467062660, guid: bf210fdbe2dd7bd439f61312e9be92c7, type: 3}

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6366b66e40dfc15428fd570e9b964b64, type: 3}
+  m_Name: BabyEatingParty
+  m_EditorClassIdentifier: 
+  alertIcon: {fileID: 21300000, guid: 19e7c4112c003244388ec18e3df528bd, type: 3}
+  alertTitle: Baby Eating Extravaganza!
+  alertBody:
+  - The annual billionaire baby eating party is taking place in the heart of America.
+    The guest list is packed, and the babies have been secured! All that's left is
+    to make sure no one knows it's happening.
+  - '<color=green>Tutorial: Sometimes, objects will appear on the map with a <color=yellow>yellow
+    circle</color> around it. Make sure to avoid this circle or else the public becomes
+    more aware of the cruel world we live in.'
+  - <color=green>When an aircraft touches the circle, the <b>Conspiracy Meter</b>
+    will fill in a little. If the conspiracy meter fills up all the way, you will
+    be faced with <color=red>DISCIPLINARY ACTIONS</color>
+  visualAids:
+  - visual: {fileID: 21300000, guid: 166c335dd8f3e394c8591e4984c522fc, type: 3}
+    messageElement: 1
+  - visual: {fileID: 21300000, guid: 166c335dd8f3e394c8591e4984c522fc, type: 3}
+    messageElement: 2
+  windowSize: {x: 500, y: 300}
+  eventSpawns:
+  - spawn: {fileID: 4768006302642341423, guid: ee4dae305ae7bfb42963aa3e718fa30f, type: 3}
+    spawnLocation: {x: -6.18, y: 1.2}

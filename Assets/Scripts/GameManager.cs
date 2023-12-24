@@ -48,14 +48,13 @@ public class GameManager : MonoBehaviour
         timerText.text = "09:00";
 
         satisfactionSlider.OnSliderValueChanged += CheckForGameOver;
+        conspiracySlider.OnSliderValueChanged += CheckForGameOver;
     }
 
-    private void CheckForGameOver(float value)
+    private void CheckForGameOver(float v)
     {
-        if (value <= 0) 
-        {
+        if(satisfactionSlider.SliderValue <= 0 || (conspiracySlider.gameObject.activeSelf && conspiracySlider.SliderValue >= 100)) 
             DisplayGameOver();
-        }
     }
 
     public void StartLevel()
@@ -108,6 +107,7 @@ public class GameManager : MonoBehaviour
         timeInLevel = 0;
         CheckForTimeTriggeredEvents();
         satisfactionSlider.SliderValue = 100;
+        conspiracySlider.SliderValue = 0;
         yield return new WaitForSeconds(GracePeriod);
         timeInLevel = GracePeriod;
         FlightManager.Instance.OnPlaneCrash += OnPlaneCrash;
@@ -150,7 +150,17 @@ public class GameManager : MonoBehaviour
 
     private void OnPlaneCrash()
     {
-        satisfactionSlider.SliderValue -= 25;
+        satisfactionSlider.SliderValue -= 23;
+    }
+
+    public void IncreaseCustomerSatisfaction(int increase)
+    {
+        satisfactionSlider.SliderValue += increase;
+    }
+
+    public void IncreaseCustomerSuspicion(int increase)
+    {
+        if(conspiracySlider != null) conspiracySlider.SliderValue += increase;
     }
 
     private void CheckForTimeTriggeredEvents()
