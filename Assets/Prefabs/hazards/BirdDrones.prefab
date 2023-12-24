@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5361787059612180720}
   - component: {fileID: 7283802917153861766}
   - component: {fileID: 9163195434849514822}
-  - component: {fileID: 8214570317769876481}
+  - component: {fileID: -615418905482885453}
   m_Layer: 5
   m_Name: BirdDrones
   m_TagString: Conspiracy
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec83879498c773840b5d3a20a1d68f64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 031c109b36d126c4b8b730d4b3ba3ccb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &8214570317769876481
+--- !u!95 &-615418905482885453
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ Animator:
   m_GameObject: {fileID: 4768006302642341423}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cf9a38ffa3955b846aa69e71e2ba7898, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8024f0ecd9c0ffe4b8167f5819ca281a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4369343193108755048, guid: 0153cdb27b9e67f4093852f97a7c0c32, type: 3}
+      propertyPath: m_Radius
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 6883604083023930817, guid: 0153cdb27b9e67f4093852f97a7c0c32, type: 3}
       propertyPath: m_Name
       value: Hazard
@@ -228,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8477348857886721786, guid: 0153cdb27b9e67f4093852f97a7c0c32, type: 3}
       propertyPath: isConspiracy
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

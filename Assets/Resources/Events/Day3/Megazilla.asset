@@ -26,4 +26,6 @@ MonoBehaviour:
     will crash into him, but also because it is really annoying to the passengers.
   visualAids: []
   windowSize: {x: 0, y: 0}
-  eventSpawns: []
+  eventSpawns:
+  - spawn: {fileID: 4768006302642341423, guid: f37489e6b8573d7468fe0fd1f7825793, type: 3}
+    spawnLocation: {x: 1, y: 1}

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6366b66e40dfc15428fd570e9b964b64, type: 3}
-  m_Name: Lizard People
+  m_Name: PortalToHell
   m_EditorClassIdentifier: 
   alertIcon: {fileID: 21300000, guid: 19e7c4112c003244388ec18e3df528bd, type: 3}
-  alertTitle: Reptilian Demonstrations
+  alertTitle: Portal To Hell
   alertBody:
-  - 'After MJ began their rampage, crimes against lizard people have soared within
-    the shadow government. Lizard people have taken to the streets, and demand to
-    be treated with respect. '
-  - 'Avoid flying over these demonstrations as much as possible! '
+  - The Portal to Hell is opening for the annual diplomacy meetings with the shadow
+    government. Avoid flying over it as much as possible!
   visualAids: []
   windowSize: {x: 0, y: 0}
-  eventSpawns: []
+  eventSpawns:
+  - spawn: {fileID: 4768006302642341423, guid: 7faf86f95c92c824ea9868eb69243999, type: 3}
+    spawnLocation: {x: -1.05, y: -1.75}

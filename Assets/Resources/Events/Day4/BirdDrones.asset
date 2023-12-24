@@ -15,9 +15,11 @@ MonoBehaviour:
   alertIcon: {fileID: 21300000, guid: 25a1047e82719274bb057adf8ff9b2df, type: 3}
   alertTitle: Angry Bird Drones
   alertBody:
-  - Faulty bird drones have escaped the Scandinavian bird factory, and are now attacking
+  - Faulty bird drones have escaped the Siberian bird factory, and are now attacking
     the skies!
   - Dodge these birds as much as possible!
   visualAids: []
   windowSize: {x: 0, y: 0}
-  eventSpawns: []
+  eventSpawns:
+  - spawn: {fileID: 4768006302642341423, guid: acfc06f791b780941b65a7216c27f36c, type: 3}
+    spawnLocation: {x: 0.5, y: 3.1}

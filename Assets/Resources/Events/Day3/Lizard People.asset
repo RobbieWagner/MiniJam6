@@ -10,13 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6366b66e40dfc15428fd570e9b964b64, type: 3}
-  m_Name: Malaysian Plane
+  m_Name: Lizard People
   m_EditorClassIdentifier: 
   alertIcon: {fileID: 21300000, guid: 19e7c4112c003244388ec18e3df528bd, type: 3}
-  alertTitle: Malaysian Plane
+  alertTitle: Reptilian Demonstrations
   alertBody:
-  - The Malaysian plane that we use to fly Martians between The planet's poles is
-    making many shipments today. Avoid getting to close to it/coming into contact!
+  - 'After MJ began their rampage, crimes against lizard people have soared within
+    the shadow government. Lizard people have taken to the streets, and demand to
+    be treated with respect. '
+  - 'Avoid flying over these demonstrations as much as possible! '
   visualAids: []
   windowSize: {x: 0, y: 0}
-  eventSpawns: []
+  eventSpawns:
+  - spawn: {fileID: 4768006302642341423, guid: 2cb4b9b3dbcf12c42a5c1e57aea2d5cf, type: 3}
+    spawnLocation: {x: -1.8, y: -1}

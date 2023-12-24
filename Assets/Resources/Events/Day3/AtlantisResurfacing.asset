@@ -19,4 +19,6 @@ MonoBehaviour:
     avoid flying over Atlantis at all costs!
   visualAids: []
   windowSize: {x: 0, y: 0}
-  eventSpawns: []
+  eventSpawns:
+  - spawn: {fileID: 4768006302642341423, guid: 53901b09aca2b8e41995c6e008cd89be, type: 3}
+    spawnLocation: {x: -4.25, y: 0.25}

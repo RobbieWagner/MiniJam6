@@ -74,7 +74,6 @@ public class Airplane : MonoBehaviour
         else destinations.Add(destination);
 
         planeCollider.enabled = true;
-        //this.destination = destinations[0];
         rb2d.velocity = Vector2.ClampMagnitude(destinations[0] - (Vector2) transform.position, 1) * flightSpeed;
         SoundManager.Instance.PlaySoundByName("FlyToDestination");
         

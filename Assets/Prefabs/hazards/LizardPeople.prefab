@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5361787059612180720}
   - component: {fileID: 7283802917153861766}
   - component: {fileID: 9163195434849514822}
-  - component: {fileID: 8214570317769876481}
   m_Layer: 5
   m_Name: LizardPeople
   m_TagString: Conspiracy
@@ -68,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec83879498c773840b5d3a20a1d68f64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0b1be04a0958b249a489f1aa86d9f4b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -105,27 +104,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &8214570317769876481
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4768006302642341423}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cf9a38ffa3955b846aa69e71e2ba7898, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2471953163102409272
 PrefabInstance:
   m_ObjectHideFlags: 0

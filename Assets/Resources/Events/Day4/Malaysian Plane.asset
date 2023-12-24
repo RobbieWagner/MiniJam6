@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6366b66e40dfc15428fd570e9b964b64, type: 3}
-  m_Name: PortalToHell
+  m_Name: Malaysian Plane
   m_EditorClassIdentifier: 
   alertIcon: {fileID: 21300000, guid: 19e7c4112c003244388ec18e3df528bd, type: 3}
-  alertTitle: Portal To Hell
+  alertTitle: Malaysian Plane
   alertBody:
-  - The Portal to Hell is opening for the annual diplomacy meetings with the shadow
-    government. Avoid flying over it as much as possible!
+  - The Malaysian plane that we use to fly Martians between The planet's poles is
+    making many shipments today. Avoid getting to close to it/coming into contact!
   visualAids: []
   windowSize: {x: 0, y: 0}
-  eventSpawns: []
+  eventSpawns:
+  - spawn: {fileID: 4768006302642341423, guid: 5d90f11972db5424fbfa416b92335b3f, type: 3}
+    spawnLocation: {x: -2.4, y: -4.8}
