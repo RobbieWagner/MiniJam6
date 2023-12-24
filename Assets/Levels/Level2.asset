@@ -22,9 +22,9 @@ MonoBehaviour:
   - timeOfEvent: 0
     gameEvent: {fileID: 11400000, guid: c591de9601b2fd043bd8a1af4bc07931, type: 2}
     triggered: 1
-  - timeOfEvent: 6
+  - timeOfEvent: 60
     gameEvent: {fileID: 11400000, guid: a7e8320b88a7a484a92e4762f7fa9f41, type: 2}
     triggered: 0
-  - timeOfEvent: 12
+  - timeOfEvent: 180
     gameEvent: {fileID: 11400000, guid: 2fbd9a09537ab614baf304c0681382cb, type: 2}
     triggered: 0

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,7 +27,6 @@ public class ChemtrailPlane : Airplane
 
         regainOnStop = (int) Vector2.Distance(position, transform.position);
     }
-
     private void IncreaseSatisfaction()
     {
         GameManager.Instance.IncreaseCustomerSatisfaction(regainOnStop);
