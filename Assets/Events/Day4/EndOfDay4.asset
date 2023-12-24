@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6366b66e40dfc15428fd570e9b964b64, type: 3}
-  m_Name: AtlantisResurfacing
+  m_Name: EndOfDay4
   m_EditorClassIdentifier: 
-  alertIcon: {fileID: 21300000, guid: 19e7c4112c003244388ec18e3df528bd, type: 3}
-  alertTitle: Atlantis Resurfacing
+  alertIcon: {fileID: 21300000, guid: 72e9bf90cf91e6c48b31542db58f343d, type: 3}
+  alertTitle: Congratulations
   alertBody:
-  - Atlantis is resurfacing today to begin a peace summit with the shadow government.
-    avoid flying over Atlantis at all costs!
+  - <color=#7072ffff>Congratulations, Employee 224937, on the successful completion
+    of your first work week.
+  - <color=#7072ffff>Please accept the next day off (without pay), and a complimentary
+    2 hour visit with your family.
+  - <color=#7072ffff>Thank you.
   visualAids: []
   windowSize: {x: 0, y: 0}
   eventSpawns: []

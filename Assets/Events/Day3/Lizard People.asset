@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6366b66e40dfc15428fd570e9b964b64, type: 3}
-  m_Name: AtlantisResurfacing
+  m_Name: Lizard People
   m_EditorClassIdentifier: 
   alertIcon: {fileID: 21300000, guid: 19e7c4112c003244388ec18e3df528bd, type: 3}
-  alertTitle: Atlantis Resurfacing
+  alertTitle: Reptilian Demonstrations
   alertBody:
-  - Atlantis is resurfacing today to begin a peace summit with the shadow government.
-    avoid flying over Atlantis at all costs!
+  - 'After MJ began their rampage, crimes against lizard people have soared within
+    the shadow government. Lizard people have taken to the streets, and demand to
+    be treated with respect. '
+  - 'Avoid flying over these demonstrations as much as possible! '
   visualAids: []
   windowSize: {x: 0, y: 0}
   eventSpawns: []

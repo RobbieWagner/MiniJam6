@@ -10,24 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8b6d58c543c58043a6ec20ea0bf06e4, type: 3}
-  m_Name: Level3
+  m_Name: Level4
   m_EditorClassIdentifier: 
   levelDifficulty: 3
   flightCount: 25
-  levelTime: 280
+  levelTime: 360
   maxFlightsAtOneTime: 3
   minTimeBetweenFlights: 0.5
   maxTimeBetweenFlights: 2
   events:
   - timeOfEvent: 0
-    gameEvent: {fileID: 11400000, guid: 11eaf36a4a693754da8f10b4bb585d59, type: 2}
+    gameEvent: {fileID: 11400000, guid: 06b30765d42fd7747bd59e099d683330, type: 2}
     triggered: 1
-  - timeOfEvent: 70
-    gameEvent: {fileID: 11400000, guid: f6472a2e63a34754eb4c2299e19db40c, type: 2}
+  - timeOfEvent: 60
+    gameEvent: {fileID: 11400000, guid: 884f04f2f9254bb4c898ba4a57f030c3, type: 2}
     triggered: 1
-  - timeOfEvent: 140
-    gameEvent: {fileID: 11400000, guid: f23e165c8857ded41b0bcf6a1c411974, type: 2}
+  - timeOfEvent: 120
+    gameEvent: {fileID: 11400000, guid: d2cd419d83117f04cb1e89aad5e6ad90, type: 2}
     triggered: 1
-  - timeOfEvent: 210
-    gameEvent: {fileID: 11400000, guid: 8a741efe32331d241a213ab5e8c7f699, type: 2}
+  - timeOfEvent: 260
+    gameEvent: {fileID: 11400000, guid: 41515a9a0d1768e42b380ab378e1d390, type: 2}
+    triggered: 1
+  - timeOfEvent: 358
+    gameEvent: {fileID: 11400000, guid: 361ac0a85b8e931488b62220e02223c9, type: 2}
     triggered: 1

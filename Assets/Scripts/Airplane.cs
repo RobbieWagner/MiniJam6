@@ -9,7 +9,6 @@ public class Airplane : MonoBehaviour
     [HideInInspector] public int flightID;
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private Collider2D planeCollider;
-    //[HideInInspector] public Vector2 destination;
     protected List<Vector2> destinations;
     public float flightSpeed = 1f;
 
